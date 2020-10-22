@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome', ['students' => 'sdds']);
+// });
+
+Route::get('/', [StudentController::class, 'index']);
+Route::post('/add', [StudentController::class, 'store']);
+Route::delete('/{id}', [StudentController::class, 'destroy']);
