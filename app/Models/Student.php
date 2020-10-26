@@ -7,9 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
- 	public $table = "student";
+  
+    protected $table="students";
 
- 	protected $fillable = [
- 		 'name', 'course','address','phoneno'
- 	];
-}
+    public function students(){
+        return $this->belongsTo(courses::class);
+    }
+//     protected $fillable = [
+//         'name', 'course','address','phoneno'
+//    ];
+ }
+
+

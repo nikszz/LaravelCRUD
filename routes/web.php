@@ -18,6 +18,6 @@ use App\Http\Controllers\StudentController;
 //     return view('welcome', ['students' => 'sdds']);
 // });
 
-Route::get('/', [StudentController::class, 'index']);
-Route::post('/add', [StudentController::class, 'store']);
-Route::delete('/{id}', [StudentController::class, 'destroy']);
+Route::get('/add-student', [StudentController::class, 'addStudent']);
+
+Route::get('/add-course/{id}', [StudentController::class, 'addCourse']);

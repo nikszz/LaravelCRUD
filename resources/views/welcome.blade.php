@@ -298,7 +298,7 @@ table.table .avatar {
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($students ?? '' as $data)
+                        @foreach($students ?? '' as $data ?? '')
                         <tr>
                             <td>
                                 <span class="custom-checkbox">
@@ -306,11 +306,11 @@ table.table .avatar {
                                     <label for="checkbox5"></label>
                                 </span>
                             </td>
-                            <td>{{$data->id}}</td>
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->course}}</td>
-                            <td>{{$data->address}}</td>
-                            <td>{{$data->phoneno}}</td>
+                            <td>{{$data ?? ''->id}}</td>
+                            <td>{{$data ?? ''->name}}</td>
+                            <td>{{$data ?? ''->course}}</td>
+                            <td>{{$data ?? ''->address}}</td>
+                            <td>{{$data ?? ''->phoneno}}</td>
                             <td>
                                 <a href="#editStudentsModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                 <a href="#deleteStudentsModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -409,7 +409,7 @@ table.table .avatar {
     <div id="deleteStudentsModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/{{$data->id}}" method="delete">            
+                <form action="/{{$data ?? ''->id}}" method="delete">            
                     <div class="modal-header">
                         <h4 class="modal-title">Delete Students</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
