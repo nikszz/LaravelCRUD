@@ -92,5 +92,6 @@ class StudentController extends Controller
     {
         $student = Student::find($student);
         $student->delete();
+        return redirect()->back();
     }
 }
